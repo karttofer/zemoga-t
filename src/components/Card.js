@@ -187,8 +187,8 @@ const Card = ({
     dispatch(
       actions.voteFavor(
         btnSelected === 'upVote'
-          ? constStyles.VOTE_AGAINST
-          : constStyles.VOTE_FAVOR,
+          ? constStyles.VOTE_FAVOR
+          : constStyles.VOTE_AGAINST,
         name
       )
     );

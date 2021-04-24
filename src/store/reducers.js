@@ -7,6 +7,8 @@ export const vote = (state = initialState, action) => {
   const addVote = (type) =>
     state.items.map((data) => {
       if (data.name === action.payload.name) {
+        data.votes[`${type}PrevState`] = data.votes[type];
+        data.votes['voted'] = 'yes';
         data.votes[type] += 1;
       }
       return data;
@@ -20,7 +22,6 @@ export const vote = (state = initialState, action) => {
       };
       break;
     case VOTE_AGAINST:
-      addVote('negative');
       return {
         ...state,
         items: addVote('negative'),
