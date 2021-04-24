@@ -156,7 +156,7 @@ const Card = ({
   name,
   information,
   lastUpdate,
-  isCurrentVoting,
+  alreadyVoted,
   isColumn,
   totalVotes,
   bgImage,
@@ -192,6 +192,10 @@ const Card = ({
         name
       )
     );
+  };
+
+  const voteAgain = () => {
+    dispatch({ type: constStyles.VOTE_AGAIN, payload: { name } });
   };
 
   useEffect(() => {
@@ -248,33 +252,41 @@ const Card = ({
             )} in ${category}`}</p>
           </TimeWrapper>
           <VoteButtonWrapper>
-            <VoteButton
-              onClick={() =>
-                btnSelected !== 'upVote'
-                  ? setBtnSelected('upVote')
-                  : setBtnSelected('')
-              }
-              border={btnSelected === 'upVote' ? '1px solid #fff' : 'none'}
-              margin='0px 14px 0px 0px'
-              bgColorCode={constStyles.ThumbUp}
-            >
-              <img src={ThumbsUp}></img>
-            </VoteButton>
-            <VoteButton
-              onClick={() =>
-                btnSelected !== 'downVote'
-                  ? setBtnSelected('downVote')
-                  : setBtnSelected('')
-              }
-              border={btnSelected === 'downVote' ? '1px solid #fff' : 'none'}
-              margin='0px 14px 0px 0px'
-              bgColorCode={constStyles.ThumbDown}
-            >
-              <img src={ThumbsDown}></img>
-            </VoteButton>
-            {isVoteSelected && (
-              <ButtonBasicStyle onClick={() => vote()}>
-                <p>Vote Now</p>
+            {alreadyVoted === false && (
+              <>
+                <VoteButton
+                  onClick={() =>
+                    btnSelected !== 'upVote'
+                      ? setBtnSelected('upVote')
+                      : setBtnSelected('')
+                  }
+                  border={btnSelected === 'upVote' ? '1px solid #fff' : 'none'}
+                  margin='0px 14px 0px 0px'
+                  bgColorCode={constStyles.ThumbUp}
+                >
+                  <img src={ThumbsUp}></img>
+                </VoteButton>
+                <VoteButton
+                  onClick={() =>
+                    btnSelected !== 'downVote'
+                      ? setBtnSelected('downVote')
+                      : setBtnSelected('')
+                  }
+                  border={
+                    btnSelected === 'downVote' ? '1px solid #fff' : 'none'
+                  }
+                  margin='0px 14px 0px 0px'
+                  bgColorCode={constStyles.ThumbDown}
+                >
+                  <img src={ThumbsDown}></img>
+                </VoteButton>
+              </>
+            )}
+            {(isVoteSelected || alreadyVoted) && (
+              <ButtonBasicStyle
+                onClick={() => (alreadyVoted ? voteAgain() : vote())}
+              >
+                <p>{alreadyVoted ? 'Vote Again' : 'Vote Now'}</p>
               </ButtonBasicStyle>
             )}
           </VoteButtonWrapper>
@@ -282,10 +294,10 @@ const Card = ({
       </AllWrapper>
 
       <ProgressWrapper>
-        <TrendProgress main={false} progress={downTrend} total={totalVotes} />
+        <TrendProgress main={false} progress={upTrend} total={totalVotes} />
         <TrendProgress
           main={false}
-          progress={upTrend}
+          progress={downTrend}
           total={totalVotes}
           isNegativeVote={true}
         />

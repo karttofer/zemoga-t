@@ -68,6 +68,7 @@ const CardContainer = () => {
       >
         {personList.map((e) => (
           <Card
+            alreadyVoted={e.votes.voted ? true : false}
             lastUpdate={e.lastUpdated}
             category={e.category}
             key={e.name}
