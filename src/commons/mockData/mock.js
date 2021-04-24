@@ -4,8 +4,8 @@ export const mock = [
     description:
       'Born in Atlanta and raised in Chicago, West was first known as a producer for Roc-A-Fella Records in the early 2000s, producing singles for several mainstream artists.',
     category: 'entertainment',
-    picture: 'kanye.png',
-    lastUpdated: '2020-03-10T23:08:57.892Z',
+    picture: 'kanye.svg',
+    lastUpdated: '2020-04-10T23:08:57.892Z',
     votes: {
       positive: 23,
       negative: 36,
@@ -16,11 +16,11 @@ export const mock = [
     description:
       'Born in White Plains, New York, Zuckerberg attended Harvard University, where he launched the Facebook social networking service from his dormitory room on February 4, 2004.',
     category: 'business',
-    picture: 'mark.png',
+    picture: 'mark.svg',
     lastUpdated: '2021-02-14T23:10:19.134Z',
     votes: {
-      positive: 418,
-      negative: 324,
+      positive: 45,
+      negative: 55,
     },
   },
   {
@@ -28,11 +28,11 @@ export const mock = [
     description:
       'Her first term of office started with a conflict with the agricultural sector, and her proposed taxation system was rejected.',
     category: 'politics',
-    picture: 'cristina.png',
+    picture: 'cristina.svg',
     lastUpdated: '2020-12-10T23:41:07.120Z',
     votes: {
-      positive: 45,
-      negative: 97,
+      positive: 47,
+      negative: 93,
     },
   },
   {
@@ -40,11 +40,11 @@ export const mock = [
     description:
       'The daughter of educational activist Ziauddin, Yousafzai was born to a Pashtun family in Mingora, Khyber Pakhtunkhwa, Pakistan. Her family came to run a chain of schools in the region.',
     category: 'politics',
-    picture: 'malala.png',
+    picture: 'malala.svg',
     lastUpdated: '2020-12-10T23:41:07.120Z',
     votes: {
-      positive: 18,
-      negative: 3,
+      positive: 77,
+      negative: 55,
     },
   },
   {
@@ -52,11 +52,11 @@ export const mock = [
     description:
       'In 2002, Musk founded SpaceX, an aerospace manufacturer and space transport services company, of which he is CEO, CTO, and lead designer.',
     category: 'business',
-    picture: 'elon.png',
+    picture: 'elon.svg',
     lastUpdated: '2020-12-20T23:43:38.041Z',
     votes: {
-      positive: 1237,
-      negative: 894,
+      positive: 60,
+      negative: 11,
     },
   },
   {
@@ -64,11 +64,11 @@ export const mock = [
     description:
       "Thunberg's activism started after convincing her parents to adopt several lifestyle choices to reduce their own carbon footprint.",
     category: 'environment',
-    picture: 'greta.png',
+    picture: 'greta.svg',
     lastUpdated: '2021-02-26T23:44:50.326Z',
     votes: {
-      positive: 118,
-      negative: 45,
+      positive: 37,
+      negative: 65,
     },
   },
 ];

@@ -1,8 +1,8 @@
 // Dependencies
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 
 // Reducers
-import { addElements } from './reducers';
+import { vote } from './reducers';
 
 // Mock Data
 import { mock } from '../commons/mockData/mock';
@@ -12,8 +12,10 @@ export const initialState = {
   items: mock,
 };
 
+// Combine reducers
+
 // Store
 export const store = createStore(
-  addElements /* preloadedState, */,
+  vote /* preloadedState, */,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );

@@ -1,15 +1,31 @@
 // Dependencies
 import { initialState } from './initialState';
-import { ADD_ITEMS } from '../commons/constants/contants';
+import { VOTE_FAVOR, VOTE_AGAINST } from '../commons/constants/contants';
 
-// Add the elements to the store
-export const addElements = (state = initialState, action) => {
+// Votes
+export const vote = (state = initialState, action) => {
+  const addVote = (type) =>
+    state.items.map((data) => {
+      if (data.name === action.payload.name) {
+        data.votes[type] += 1;
+      }
+      return data;
+    });
+
   switch (action.type) {
-    case ADD_ITEMS:
+    case VOTE_FAVOR:
       return {
         ...state,
-        news: action.payload,
+        items: addVote('positive'),
       };
+      break;
+    case VOTE_AGAINST:
+      addVote('negative');
+      return {
+        ...state,
+        items: addVote('negative'),
+      };
+      break;
     default:
       return state;
   }
