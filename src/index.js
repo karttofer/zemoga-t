@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 // Style
 import './index.css';
@@ -15,7 +16,9 @@ import { store } from './store/initialState';
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <Route path='/' component={App} />
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
