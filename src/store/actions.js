@@ -1,4 +1,4 @@
-// Actions to vote favor
+// Actions to vote
 export const vote = (typeOfVote, name) => ({
   type: typeOfVote,
   payload: {

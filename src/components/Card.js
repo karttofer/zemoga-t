@@ -1,20 +1,20 @@
 // Dependencies
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { useDispatch } from "react-redux";
 
 // Contants
-import * as constStyles from '../commons/constants/contants';
+import * as constStyles from "../commons/constants/contants";
 
 // Actions
-import * as actions from '../store/actions';
+import * as actions from "../store/actions";
 
 // Assets
-import ThumbsUp from '../assets/images/thumbs-up.svg';
-import ThumbsDown from '../assets/images/thumbs-down.svg';
+import ThumbsUp from "../assets/images/thumbs-up.svg";
+import ThumbsDown from "../assets/images/thumbs-down.svg";
 
 // Components
-import TrendProgress from '../components/TrendProgress';
+import TrendProgress from "../components/TrendProgress";
 
 // Styles
 const Wrapper = styled.div`
@@ -164,7 +164,7 @@ const Card = ({
   bgImage,
 }) => {
   // State
-  const [btnSelected, setBtnSelected] = useState('');
+  const [btnSelected, setBtnSelected] = useState("");
   const [isVoteSelected, setIsVoteSelected] = useState(false);
 
   // Store dispatch
@@ -198,7 +198,7 @@ const Card = ({
   const vote = () => {
     dispatch(
       actions.vote(
-        btnSelected === 'upVote'
+        btnSelected === "upVote"
           ? constStyles.VOTE_FAVOR
           : constStyles.VOTE_AGAINST,
         name
@@ -227,25 +227,25 @@ const Card = ({
   return (
     <Wrapper
       bgImage={bgImage}
-      bgSize={isColumn ? 'cover' : 'contain'}
-      width={isColumn ? '356.5px' : ''}
+      bgSize={isColumn ? "cover" : "contain"}
+      width={isColumn ? "356.5px" : ""}
     >
       <Effect
         linealGradient={
           isColumn
-            ? 'linear-gradient(179deg, #04040400, #000000d6)'
-            : 'linear-gradient(95deg, #a29b9a00, #8c8585, #000000b0, #848484)'
+            ? "linear-gradient(179deg, #04040400, #000000d6)"
+            : "linear-gradient(95deg, #a29b9a00, #8c8585, #000000b0, #848484)"
         }
       ></Effect>
       <AllWrapper
-        flexDirection={isColumn ? 'column' : 'row'}
-        margin={isColumn ? '46px 17px 0px 0px' : ''}
+        flexDirection={isColumn ? "column" : "row"}
+        margin={isColumn ? "46px 17px 0px 0px" : ""}
       >
-        <DescriptionWrapper gridColumn={isColumn ? '10% auto' : '199px auto'}>
+        <DescriptionWrapper gridColumn={isColumn ? "10% auto" : "199px auto"}>
           <VoteButton
-            width='30px'
-            margin={isColumn ? '5px 14px 0px 0px' : ''}
-            border='none'
+            width="30px"
+            margin={isColumn ? "5px 14px 0px 0px" : ""}
+            border="none"
             bgColorCode={
               upTrend > downTrend ? constStyles.ThumbUp : constStyles.ThumbDown
             }
@@ -258,7 +258,7 @@ const Card = ({
           </DesctiptionTextWrapper>
         </DescriptionWrapper>
         <VoteWrapper
-          margin={isColumn ? '0px 17px 8px 0px' : '0px 17px 0px 0px'}
+          margin={isColumn ? "0px 17px 8px 0px" : "0px 17px 0px 0px"}
         >
           <TimeWrapper>
             <p>{`${calcDate(
@@ -270,29 +270,29 @@ const Card = ({
             {alreadyVoted === false && (
               <>
                 <VoteButton
-                  width='30px'
+                  width="30px"
                   onClick={() =>
-                    btnSelected !== 'upVote'
-                      ? setBtnSelected('upVote')
-                      : setBtnSelected('')
+                    btnSelected !== "upVote"
+                      ? setBtnSelected("upVote")
+                      : setBtnSelected("")
                   }
-                  border={btnSelected === 'upVote' ? '1px solid #fff' : 'none'}
-                  margin='0px 14px 0px 0px'
+                  border={btnSelected === "upVote" ? "1px solid #fff" : "none"}
+                  margin="0px 14px 0px 0px"
                   bgColorCode={constStyles.ThumbUp}
                 >
                   <img src={ThumbsUp}></img>
                 </VoteButton>
                 <VoteButton
-                  width='30px'
+                  width="30px"
                   onClick={() =>
-                    btnSelected !== 'downVote'
-                      ? setBtnSelected('downVote')
-                      : setBtnSelected('')
+                    btnSelected !== "downVote"
+                      ? setBtnSelected("downVote")
+                      : setBtnSelected("")
                   }
                   border={
-                    btnSelected === 'downVote' ? '1px solid #fff' : 'none'
+                    btnSelected === "downVote" ? "1px solid #fff" : "none"
                   }
-                  margin='0px 14px 0px 0px'
+                  margin="0px 14px 0px 0px"
                   bgColorCode={constStyles.ThumbDown}
                 >
                   <img src={ThumbsDown}></img>
@@ -303,7 +303,7 @@ const Card = ({
               <ButtonBasicStyle
                 onClick={() => (alreadyVoted ? voteAgain() : vote())}
               >
-                <p>{alreadyVoted ? 'Vote Again' : 'Vote Now'}</p>
+                <p>{alreadyVoted ? "Vote Again" : "Vote Now"}</p>
               </ButtonBasicStyle>
             )}
           </VoteButtonWrapper>

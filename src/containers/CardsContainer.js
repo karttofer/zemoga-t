@@ -1,23 +1,23 @@
 // Dependencies
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { useSelector } from 'react-redux';
-import Slider from 'react-slick';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { useSelector } from "react-redux";
+import Slider from "react-slick";
 
 // Import css files
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // Assets
-import elon from '../assets/images/elon.svg';
-import malala from '../assets/images/malala.svg';
-import cristina from '../assets/images/cristina.svg';
-import mark from '../assets/images/mark.svg';
-import greta from '../assets/images/greta.svg';
-import kanye from '../assets/images/kanye.svg';
+import elon from "../assets/images/elon.svg";
+import malala from "../assets/images/malala.svg";
+import cristina from "../assets/images/cristina.svg";
+import mark from "../assets/images/mark.svg";
+import greta from "../assets/images/greta.svg";
+import kanye from "../assets/images/kanye.svg";
 
 // Components
-import Card from '../components/Card';
+import Card from "../components/Card";
 
 // Styles
 const Wrapper = styled.div`
@@ -103,10 +103,10 @@ const CardContainer = () => {
         </WrapperSelect>
       </SelectTitleWrapper>
       <Wrapper
-        wrap={isColumn ? 'wrap' : ''}
-        display={isColumn ? 'flex' : 'grid'}
-        Gridcolumns='repeat(auto-fill, 356px)'
-        gridGap='11px'
+        wrap={isColumn ? "wrap" : ""}
+        display={isColumn ? "flex" : "grid"}
+        Gridcolumns="repeat(auto-fill, 356px)"
+        gridGap="11px"
       >
         {personList.map((e) => (
           <Card
@@ -120,7 +120,7 @@ const CardContainer = () => {
             name={e.name}
             isColumn={isColumn}
             totalVotes={e.votes.negative + e.votes.positive}
-            bgImage={images[e.picture.split('.')[0]]}
+            bgImage={images[e.picture.split(".")[0]]}
           />
         ))}
       </Wrapper>
@@ -138,7 +138,7 @@ const CardContainer = () => {
               name={e.name}
               isColumn={isColumn}
               totalVotes={e.votes.negative + e.votes.positive}
-              bgImage={images[e.picture.split('.')[0]]}
+              bgImage={images[e.picture.split(".")[0]]}
             />
           ))}
         </Slider>

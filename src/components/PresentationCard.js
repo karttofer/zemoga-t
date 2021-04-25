@@ -1,14 +1,14 @@
 // Dependencies
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 // Assets
-import Wikipedia from '../assets/images/wikipedia.svg';
-import ThumbUpSvg from '../assets/images/thumbs-down.svg';
-import ThumbDownSvg from '../assets/images/thumbs-up.svg';
+import Wikipedia from "../assets/images/wikipedia.svg";
+import ThumbUpSvg from "../assets/images/thumbs-down.svg";
+import ThumbDownSvg from "../assets/images/thumbs-up.svg";
 
 // Constant
-import { ThumbUp, ThumbDown } from '../commons/constants/contants';
+import { ThumbUp, ThumbDown } from "../commons/constants/contants";
 
 // Styles
 const Wrapper = styled.div`
@@ -79,24 +79,24 @@ const PresentationCard = () => {
     <>
       <Wrapper>
         <Paragraph>What's your opinon on</Paragraph>
-        <Title margin='0px 0px 21px 0px' fontSize='2.8em'>
+        <Title margin="0px 0px 21px 0px" fontSize="2.8em">
           Pope Francis?
         </Title>
-        <Paragraph fontSize='1.2em'>
+        <Paragraph fontSize="1.2em">
           He’s talking tough on clergy sexual abuse, or is he just another
           pervert protector? (thumbs down) or a true pedophile punishing
           pontiff? (thumbs up)
         </Paragraph>
         <Paragraph
-          textDecoration='underline'
-          margin='21px 0px 13px 0px'
-          cursor='pointer'
-          fontSize='1.2em'
+          textDecoration="underline"
+          margin="21px 0px 13px 0px"
+          cursor="pointer"
+          fontSize="1.2em"
         >
           <img src={Wikipedia} />
           More Information
         </Paragraph>
-        <Title fontSize='1.3em'>What’s Your Veredict?</Title>
+        <Title fontSize="1.3em">What’s Your Veredict?</Title>
       </Wrapper>
       <VoteWrapper>
         <VoteButton bgColor={ThumbUp}>

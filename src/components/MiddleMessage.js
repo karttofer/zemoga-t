@@ -1,9 +1,9 @@
 // Dependencies
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 
 // Assets
-import Close from '../assets/images/close.svg';
+import Close from "../assets/images/close.svg";
 
 // Styles
 const Wrapper = styled.div`
@@ -78,9 +78,6 @@ const ShowMessage = styled.button`
 
 const MiddleMessage = () => {
   const [showMessage, setShowMessage] = useState(true);
-
-  const close = () => {};
-
   return (
     <>
       {showMessage === false && (

@@ -1,16 +1,16 @@
 // Dependencies
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 
 // Assets
-import Search from '../assets/images/search.svg';
-import Francisco from '../assets/images/pope-francis.@2x.png';
-import HamburguerSvg from '../assets/images/hamburger.svg';
-import Close from '../assets/images/close.svg';
-import Arrow from '../assets/images/arrow.svg';
+import Search from "../assets/images/search.svg";
+import Francisco from "../assets/images/pope-francis.@2x.png";
+import HamburguerSvg from "../assets/images/hamburger.svg";
+import Close from "../assets/images/close.svg";
+import Arrow from "../assets/images/arrow.svg";
 
 // Components
-import PresentationCard from '../components/PresentationCard';
+import PresentationCard from "../components/PresentationCard";
 
 // Styles
 const Wrapper = styled.div`
