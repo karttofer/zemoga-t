@@ -44,7 +44,6 @@ const Effect = styled.div`
 `;
 
 const DescriptionWrapper = styled.div`
-  height: 200px;
   z-index: 2;
   display: grid;
   grid-template-columns: ${(props) => props.gridColumn};
@@ -93,6 +92,7 @@ const VoteWrapper = styled.div`
 const TimeWrapper = styled.div``;
 
 const VoteButtonWrapper = styled.div`
+  height: 38px;
   display: flex;
   align-items: center;
 `;
