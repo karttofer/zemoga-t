@@ -74,6 +74,7 @@ const ShowMessage = styled.button`
   padding: 8px;
   background: #4240408f;
   color: #fff;
+  cursor: pointer;
 `;
 
 const MiddleMessage = () => {
