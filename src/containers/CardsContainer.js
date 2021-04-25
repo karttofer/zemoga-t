@@ -25,6 +25,7 @@ const Wrapper = styled.div`
   flex-wrap: ${(props) => props.wrap};
   grid-template-column: ${(props) => props.Gridcolumns};
   grid-gap: ${(props) => props.gridGap};
+  justify-content: center;
 
   @media (max-width: 600px) {
     display: none;
@@ -53,6 +54,7 @@ const WrapperSelect = styled.select`
   z-index: 4;
   height: 31px
   width: 114px;
+
   position: relative;
   padding: 8px;
 
