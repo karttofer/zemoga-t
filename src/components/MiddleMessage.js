@@ -104,7 +104,7 @@ const MiddleMessage = () => {
             </p>
           </SecondMessageWrapper>
           <HiddenWrapper onClick={() => setShowMessage(false)}>
-            <img src={Close} />
+            <img alt='close' src={Close} />
           </HiddenWrapper>
         </Wrapper>
       )}

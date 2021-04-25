@@ -250,7 +250,10 @@ const Card = ({
               upTrend > downTrend ? constStyles.ThumbUp : constStyles.ThumbDown
             }
           >
-            <img src={upTrend > downTrend ? ThumbsUp : ThumbsDown}></img>
+            <img
+              alt='thumbs'
+              src={upTrend > downTrend ? ThumbsUp : ThumbsDown}
+            />
           </VoteButton>
           <DesctiptionTextWrapper>
             <h1>{name}</h1>
@@ -280,7 +283,7 @@ const Card = ({
                   margin='0px 14px 0px 0px'
                   bgColorCode={constStyles.ThumbUp}
                 >
-                  <img src={ThumbsUp}></img>
+                  <img alt='thumbsUp' src={ThumbsUp} />
                 </VoteButton>
                 <VoteButton
                   width='30px'
@@ -295,7 +298,7 @@ const Card = ({
                   margin='0px 14px 0px 0px'
                   bgColorCode={constStyles.ThumbDown}
                 >
-                  <img src={ThumbsDown}></img>
+                  <img alt='thumbsDown' src={ThumbsDown} />
                 </VoteButton>
               </>
             )}

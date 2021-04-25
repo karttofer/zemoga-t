@@ -1,5 +1,5 @@
 // Dependencies
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 // Assets
@@ -62,8 +62,8 @@ const Footer = () => {
       <SocialMedias>
         <p>Follow Us</p>
         <div>
-          <img src={facebook} />
-          <img src={twitter} />
+          <img alt='facebook' src={facebook} />
+          <img alt='twitter' src={twitter} />
         </div>
       </SocialMedias>
     </Wrapper>

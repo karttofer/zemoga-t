@@ -180,7 +180,11 @@ const TrendProgress = () => {
       {modalMenu && (
         <ModalMenu>
           <div>
-            <img src={Close} onClick={() => setModalMenu(false)} />
+            <img
+              alt='pres-close'
+              src={Close}
+              onClick={() => setModalMenu(false)}
+            />
           </div>
           <ul>
             <li>
@@ -215,11 +219,11 @@ const TrendProgress = () => {
                 <p>Login / Sign Up</p>
               </li>
               <li>
-                <img src={Search} />
+                <img alt='search' src={Search} />
               </li>
             </ul>
             <Hamburguer onClick={() => setModalMenu(true)}>
-              <img src={HamburguerSvg} />
+              <img alt='hamburguer' src={HamburguerSvg} />
             </Hamburguer>
           </NavBarOptionElements>
         </NavBarWrapper>
@@ -230,7 +234,7 @@ const TrendProgress = () => {
           <p>CLOSING IN</p>
         </div>
         <div>
-          <img src={Arrow} />
+          <img alt='arrow' src={Arrow} />
         </div>
         <div>
           <h1>

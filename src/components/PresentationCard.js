@@ -93,17 +93,17 @@ const PresentationCard = () => {
           cursor='pointer'
           fontSize='1.2em'
         >
-          <img src={Wikipedia} />
+          <img alt='wikipedia' src={Wikipedia} />
           More Information
         </Paragraph>
         <Title fontSize='1.3em'>What’s Your Veredict?</Title>
       </Wrapper>
       <VoteWrapper>
         <VoteButton bgColor={ThumbUp}>
-          <img src={ThumbUpSvg} />
+          <img alt='thumbUpSvg' src={ThumbUpSvg} />
         </VoteButton>
         <VoteButton bgColor={ThumbDown}>
-          <img src={ThumbDownSvg} />
+          <img alt='ThumbDownSvg' src={ThumbDownSvg} />
         </VoteButton>
       </VoteWrapper>
     </>
