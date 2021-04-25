@@ -1,9 +1,9 @@
 // Dependencies
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 // Assets
-import People from "../assets/images/bg-people.@2x.png";
+import People from '../assets/images/bg-people.@2x.png';
 
 // Styles
 const Wrapper = styled.div`

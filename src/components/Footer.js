@@ -1,10 +1,10 @@
 // Dependencies
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 // Assets
-import facebook from "../assets/images/facebook.svg";
-import twitter from "../assets/images/twitter.svg";
+import facebook from '../assets/images/facebook.svg';
+import twitter from '../assets/images/twitter.svg';
 
 // Styles
 const Wrapper = styled.div`

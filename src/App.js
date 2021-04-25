@@ -1,13 +1,13 @@
 // Dependencies
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 // Containers
-import CardsContainer from "./containers/CardsContainer";
-import Presentation from "./components/Presentation";
-import MiddleMessage from "./components/MiddleMessage";
-import SubmitName from "./components/SubmitName";
-import Footer from "./components/Footer";
+import CardsContainer from './containers/CardsContainer';
+import Presentation from './components/Presentation';
+import MiddleMessage from './components/MiddleMessage';
+import SubmitName from './components/SubmitName';
+import Footer from './components/Footer';
 
 // Styles
 const BodyWrapper = styled.div`

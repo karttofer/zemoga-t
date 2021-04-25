@@ -1,10 +1,10 @@
 // Dependencies
-import { initialState } from "./initialState";
+import { initialState } from './initialState';
 import {
   VOTE_FAVOR,
   VOTE_AGAINST,
   VOTE_AGAIN,
-} from "../commons/constants/contants";
+} from '../commons/constants/contants';
 
 /**
  * @description This reducer will make a vote in favor or against or to vote again
@@ -18,7 +18,7 @@ export const vote = (state = initialState, action) => {
     state.items.map((data) => {
       if (data.name === action.payload.name) {
         data.votes[`${type}PrevState`] = data.votes[type];
-        data.votes["voted"] = true;
+        data.votes['voted'] = true;
         data.votes[type] += 5;
       }
       return data;
@@ -34,11 +34,11 @@ export const vote = (state = initialState, action) => {
         };
 
         const getType = Object.keys(data.votes)
-          .filter((e) => e.includes("PrevState"))
-          .join("");
+          .filter((e) => e.includes('PrevState'))
+          .join('');
 
         if (data.votes[getType]) {
-          if (getType.includes("positive")) {
+          if (getType.includes('positive')) {
             newObj.positive = data.votes[getType];
           } else {
             newObj.negative = data.votes[getType];
@@ -54,12 +54,12 @@ export const vote = (state = initialState, action) => {
     case VOTE_FAVOR:
       return {
         ...state,
-        items: addVote("positive"),
+        items: addVote('positive'),
       };
     case VOTE_AGAINST:
       return {
         ...state,
-        items: addVote("negative"),
+        items: addVote('negative'),
       };
     case VOTE_AGAIN:
       voteAgain();

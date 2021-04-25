@@ -1,11 +1,11 @@
 // Dependencies
-import { createStore } from "redux";
+import { createStore } from 'redux';
 
 // Reducers
-import { vote } from "./reducers";
+import { vote } from './reducers';
 
 // Mock Data
-import { mock } from "../commons/mockData/mock";
+import { mock } from '../commons/mockData/mock';
 
 // Initial State
 export const initialState = {
@@ -17,7 +17,7 @@ export const initialState = {
  */
 const loadState = () => {
   try {
-    const serializedData = localStorage.getItem("store");
+    const serializedData = localStorage.getItem('store');
     if (serializedData === null) {
       return undefined;
     }
@@ -34,7 +34,7 @@ const loadState = () => {
 const saveState = (state) => {
   try {
     const serializedData = JSON.stringify(state);
-    localStorage.setItem("store", serializedData);
+    localStorage.setItem('store', serializedData);
   } catch (err) {
     console.error(err);
   }
