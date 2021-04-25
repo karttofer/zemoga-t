@@ -19,8 +19,8 @@ export const mock = [
     picture: 'mark.svg',
     lastUpdated: '2021-02-14T23:10:19.134Z',
     votes: {
-      positive: 45,
-      negative: 55,
+      positive: 10,
+      negative: 30,
     },
   },
   {
@@ -31,8 +31,8 @@ export const mock = [
     picture: 'cristina.svg',
     lastUpdated: '2020-12-10T23:41:07.120Z',
     votes: {
-      positive: 47,
-      negative: 93,
+      positive: 30,
+      negative: 20,
     },
   },
   {
@@ -43,8 +43,8 @@ export const mock = [
     picture: 'malala.svg',
     lastUpdated: '2020-12-10T23:41:07.120Z',
     votes: {
-      positive: 77,
-      negative: 55,
+      positive: 20,
+      negative: 10,
     },
   },
   {
@@ -55,8 +55,8 @@ export const mock = [
     picture: 'elon.svg',
     lastUpdated: '2020-12-20T23:43:38.041Z',
     votes: {
-      positive: 60,
-      negative: 11,
+      positive: 30,
+      negative: 20,
     },
   },
   {
@@ -67,8 +67,8 @@ export const mock = [
     picture: 'greta.svg',
     lastUpdated: '2021-02-26T23:44:50.326Z',
     votes: {
-      positive: 37,
-      negative: 65,
+      positive: 50,
+      negative: 20,
     },
   },
 ];

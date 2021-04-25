@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 // Containers
 import CardsContainer from './containers/CardsContainer';
+import Presentation from './components/Presentation';
 
 // Styles
 const BodyWrapper = styled.div`
@@ -16,9 +17,12 @@ const BodyWrapper = styled.div`
 
 function App() {
   return (
-    <BodyWrapper>
-      <CardsContainer />
-    </BodyWrapper>
+    <>
+      <Presentation />
+      <BodyWrapper>
+        <CardsContainer />
+      </BodyWrapper>
+    </>
   );
 }
 
