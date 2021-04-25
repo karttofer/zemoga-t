@@ -23,6 +23,10 @@ const Wrapper = styled.div`
   @media (max-width: 600px) {
     padding: 28px 0px 0px 7%;
   }
+
+  @media (max-width: 400px) {
+    padding: 0px;
+  }
 `;
 
 const Effect = styled.div`
@@ -44,6 +48,10 @@ const NavBarWrapper = styled.nav`
     h1 {
       font-size: 1.2em;
     }
+  }
+
+  @media (max-width: 400px) {
+    padding: 15px 0px 0px 18px;
   }
 `;
 

@@ -44,6 +44,11 @@ const SelectTitleWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0px 0px 22px 0px;
+
+  @media (max-width: 600px) {
+    margin: 0px;
+  }
 `;
 
 const TitleWrapper = styled.h1`
@@ -79,13 +84,14 @@ const CardContainer = () => {
   };
 
   // Carousel Settings
-  var settings = {
+  const settings = {
     infinite: true,
     arrows: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+
   return (
     <>
       <SelectTitleWrapper>

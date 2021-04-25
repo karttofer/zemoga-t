@@ -247,10 +247,10 @@ const Card = ({
             margin={isColumn ? '5px 14px 0px 0px' : ''}
             border='none'
             bgColorCode={
-              upTrend < downTrend ? constStyles.ThumbUp : constStyles.ThumbDown
+              upTrend > downTrend ? constStyles.ThumbUp : constStyles.ThumbDown
             }
           >
-            <img src={upTrend < downTrend ? ThumbsUp : ThumbsDown}></img>
+            <img src={upTrend > downTrend ? ThumbsUp : ThumbsDown}></img>
           </VoteButton>
           <DesctiptionTextWrapper>
             <h1>{name}</h1>

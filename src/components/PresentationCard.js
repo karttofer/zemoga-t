@@ -24,6 +24,11 @@ const Wrapper = styled.div`
     padding: 23px 0px 22px 21px;
     width: 74%;
   }
+
+  @media (max-width: 400px) {
+    padding: 23px 0px 22px 21px;
+    width: 100%;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -50,6 +55,10 @@ const VoteWrapper = styled.div`
 
   @media (max-width: 1070px) {
     width: 74%;
+  }
+
+  @media (max-width: 400px) {
+    width: 100%;
   }
 `;
 

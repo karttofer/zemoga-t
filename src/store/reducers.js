@@ -13,7 +13,7 @@ export const vote = (state = initialState, action) => {
       if (data.name === action.payload.name) {
         data.votes[`${type}PrevState`] = data.votes[type];
         data.votes['voted'] = true;
-        data.votes[type] += 1;
+        data.votes[type] += 5;
       }
       return data;
     });
