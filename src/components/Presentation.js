@@ -27,7 +27,7 @@ const Wrapper = styled.div`
 
 const Effect = styled.div`
   width: 100%;
-  height: 95.3%;
+  height: 77.3%;
   position: absolute;
   background: linear-gradient(178deg, #000000ab, transparent);
 `;

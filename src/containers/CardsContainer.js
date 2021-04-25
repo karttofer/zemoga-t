@@ -2,6 +2,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import Slider from 'react-slick';
+
+// Import css files
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 // Assets
 import elon from '../assets/images/elon.svg';
@@ -20,6 +25,18 @@ const Wrapper = styled.div`
   flex-wrap: ${(props) => props.wrap};
   grid-template-column: ${(props) => props.Gridcolumns};
   grid-gap: ${(props) => props.gridGap};
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
+
+const CarouselWrapper = styled.div`
+  display: none;
+
+  @media (max-width: 600px) {
+    display: block;
+  }
 `;
 
 const SelectTitleWrapper = styled.div`
@@ -28,7 +45,9 @@ const SelectTitleWrapper = styled.div`
   align-items: center;
 `;
 
-const TitleWrapper = styled.h1``;
+const TitleWrapper = styled.h1`
+  font-weight: 300;
+`;
 
 const WrapperSelect = styled.select`
   z-index: 4;
@@ -36,6 +55,10 @@ const WrapperSelect = styled.select`
   width: 114px;
   position: relative;
   padding: 8px;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const CardContainer = () => {
@@ -51,6 +74,15 @@ const CardContainer = () => {
     mark,
     greta,
     kanye,
+  };
+
+  // Carousel Settings
+  var settings = {
+    infinite: true,
+    arrows: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
   };
   return (
     <>
@@ -84,6 +116,25 @@ const CardContainer = () => {
           />
         ))}
       </Wrapper>
+      <CarouselWrapper>
+        <Slider {...settings}>
+          {personList.map((e) => (
+            <Card
+              alreadyVoted={e.votes.voted ? true : false}
+              lastUpdate={e.lastUpdated}
+              category={e.category}
+              key={e.name}
+              downTrend={e.votes.negative}
+              upTrend={e.votes.positive}
+              information={e.description}
+              name={e.name}
+              isColumn={isColumn}
+              totalVotes={e.votes.negative + e.votes.positive}
+              bgImage={images[e.picture.split('.')[0]]}
+            />
+          ))}
+        </Slider>
+      </CarouselWrapper>
     </>
   );
 };

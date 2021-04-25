@@ -95,7 +95,7 @@ const VoteButtonWrapper = styled.div`
 `;
 
 const VoteButton = styled.button`
-  width: 30px;
+  width: ${(props) => props.width};
   height: 30px;
   margin: ${(props) => props.margin};
   background: ${(props) => props.bgColorCode};
@@ -108,6 +108,11 @@ const VoteButton = styled.button`
   }
 
   @media (max-width: 600px) {
+    width: 30px;
+    img {
+      width: 30px;
+      margin: auto;
+    }
     margin: ${(props) => props.marginOnMedia};
   }
 `;
@@ -238,7 +243,7 @@ const Card = ({
       >
         <DescriptionWrapper gridColumn={isColumn ? '10% auto' : '199px auto'}>
           <VoteButton
-            marginOnMedia='8px 14px 0px 0px'
+            width='30px'
             margin={isColumn ? '5px 14px 0px 0px' : ''}
             border='none'
             bgColorCode={
@@ -265,6 +270,7 @@ const Card = ({
             {alreadyVoted === false && (
               <>
                 <VoteButton
+                  width='30px'
                   onClick={() =>
                     btnSelected !== 'upVote'
                       ? setBtnSelected('upVote')
@@ -277,6 +283,7 @@ const Card = ({
                   <img src={ThumbsUp}></img>
                 </VoteButton>
                 <VoteButton
+                  width='30px'
                   onClick={() =>
                     btnSelected !== 'downVote'
                       ? setBtnSelected('downVote')
