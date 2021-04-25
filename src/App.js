@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import CardsContainer from './containers/CardsContainer';
 import Presentation from './components/Presentation';
 import MiddleMessage from './components/MiddleMessage';
+import SubmitName from './components/SubmitName';
 
 // Styles
 const BodyWrapper = styled.div`
@@ -24,6 +25,7 @@ function App() {
       <BodyWrapper>
         <MiddleMessage />
         <CardsContainer />
+        <SubmitName />
       </BodyWrapper>
     </>
   );
