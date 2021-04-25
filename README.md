@@ -1,4 +1,5 @@
 ## Zemoga Application Test - Build Better.
+![zemoga](https://user-images.githubusercontent.com/34972636/115999218-92c2d000-a5b0-11eb-96b1-d6db5a4a48f8.png)
 
 Esta fue una de las tareas mas inteligentemente creadas que he hecho para una empresa, en el sentido de que ustedes la crearon de tal forma para probar ciertos aspectos, que no eran necesario decirse pero que eran requeridos.
 
@@ -16,6 +17,9 @@ Esta fue una de las tareas mas inteligentemente creadas que he hecho para una em
 Yo cree deploy para que no se tenga que correr en caso de que se quiera correr se hace como una simple react-app:
 
     npm start
+
+### Tambien hicimos deploy
+    https://main--romantic-lewin-59b4a2.netlify.app/home
 
 ### Ultimas palabras.
 
