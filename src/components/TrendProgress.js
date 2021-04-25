@@ -42,7 +42,6 @@ const TrendProgress = ({ main, progress, total, isNegativeVote }) => {
         flexDirection={isNegativeVote ? 'row-reverse' : ''}
       >
         <ImgWrapper
-          //className={`img-trend-style ${main ? 'margin-center' : ''}`}
           transform={isNegativeVote ? 'rotate(180deg)' : ''}
           margin='10px'
           src={ThumbsUp}

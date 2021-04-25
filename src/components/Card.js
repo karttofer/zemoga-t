@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import humanizeTime from 'humanize-duration';
 
 // Contants
 import * as constStyles from '../commons/constants/contants';
@@ -48,7 +47,7 @@ const DescriptionWrapper = styled.div`
   display: grid;
   grid-template-columns: ${(props) => props.gridColumn};
 
-  @media (max-width: 600px) {
+  @media (max-width: 760px) {
     display: flex !important;
   }
 `;
@@ -72,8 +71,6 @@ const DesctiptionTextWrapper = styled.div`
     }
   }
 `;
-
-const PreferenceIcon = styled.div``;
 
 const VoteWrapper = styled.div`
   z-index: 2;
@@ -161,11 +158,18 @@ const Card = ({
   totalVotes,
   bgImage,
 }) => {
+  // State
   const [btnSelected, setBtnSelected] = useState('');
   const [isVoteSelected, setIsVoteSelected] = useState(false);
 
+  // Store dispatch
   const dispatch = useDispatch();
 
+  /**
+   * @param {date} date1 - This wil be the current date
+   * @param {date} date2 - The date that we'll use to make the difference
+   * @returns A message with the time that have been pased example: 14 hours ago.
+   */
   const calcDate = (date1, date2) => {
     const diff = Math.floor(date1.getTime() - date2.getTime());
     const day = 1000 * 60 * 60 * 24;
@@ -183,9 +187,12 @@ const Card = ({
     return message;
   };
 
+  /**
+   * @description This function will make a dispatch to make a vote
+   */
   const vote = () => {
     dispatch(
-      actions.voteFavor(
+      actions.vote(
         btnSelected === 'upVote'
           ? constStyles.VOTE_FAVOR
           : constStyles.VOTE_AGAINST,
@@ -194,10 +201,17 @@ const Card = ({
     );
   };
 
+  /**
+   * @description Simple function to vote again, if the user already vote
+   */
   const voteAgain = () => {
     dispatch({ type: constStyles.VOTE_AGAIN, payload: { name } });
   };
 
+  /**
+   * @description Inside of the useEffect we need to control when the user make a vote
+   * to hidde or show the vote now button
+   */
   useEffect(() => {
     if (btnSelected) {
       setIsVoteSelected(true);
@@ -222,21 +236,17 @@ const Card = ({
         flexDirection={isColumn ? 'column' : 'row'}
         margin={isColumn ? '46px 17px 0px 0px' : ''}
       >
-        <DescriptionWrapper gridColumn={isColumn ? '10% auto' : '33% 67%'}>
-          <PreferenceIcon>
-            <VoteButton
-              marginOnMedia='8px 14px 0px 0px'
-              margin={isColumn ? '5px 14px 0px 0px' : ''}
-              border='none'
-              bgColorCode={
-                upTrend < downTrend
-                  ? constStyles.ThumbUp
-                  : constStyles.ThumbDown
-              }
-            >
-              <img src={upTrend < downTrend ? ThumbsUp : ThumbsDown}></img>
-            </VoteButton>
-          </PreferenceIcon>
+        <DescriptionWrapper gridColumn={isColumn ? '10% auto' : '199px auto'}>
+          <VoteButton
+            marginOnMedia='8px 14px 0px 0px'
+            margin={isColumn ? '5px 14px 0px 0px' : ''}
+            border='none'
+            bgColorCode={
+              upTrend < downTrend ? constStyles.ThumbUp : constStyles.ThumbDown
+            }
+          >
+            <img src={upTrend < downTrend ? ThumbsUp : ThumbsDown}></img>
+          </VoteButton>
           <DesctiptionTextWrapper>
             <h1>{name}</h1>
             <p>{information}</p>

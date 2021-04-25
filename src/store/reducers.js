@@ -33,15 +33,12 @@ export const vote = (state = initialState, action) => {
         if (data.votes[getType]) {
           if (getType.includes('positive')) {
             newObj.positive = data.votes[getType];
-            console.log('asdasd');
           } else {
             newObj.negative = data.votes[getType];
-            console.log('111111111111');
           }
         }
 
         data.votes = Object.assign({}, newObj);
-        console.log(data.votes);
       }
       return data;
     });

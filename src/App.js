@@ -6,13 +6,19 @@ import styled from 'styled-components';
 import CardsContainer from './containers/CardsContainer';
 
 // Styles
-const Wrapper = styled.div``;
+const BodyWrapper = styled.div`
+  margin: 0px 120px 0px 120px;
+
+  @media (max-width: 600px) {
+    margin: 0px;
+  }
+`;
 
 function App() {
   return (
-    <Wrapper>
+    <BodyWrapper>
       <CardsContainer />
-    </Wrapper>
+    </BodyWrapper>
   );
 }
 

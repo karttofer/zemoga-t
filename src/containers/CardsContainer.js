@@ -39,9 +39,11 @@ const WrapperSelect = styled.select`
 `;
 
 const CardContainer = () => {
+  // State
   const [isColumn, setIsColumn] = useState(false);
   const personList = useSelector((state) => state.items);
 
+  // This object save all the images patchs
   const images = {
     elon,
     malala,
