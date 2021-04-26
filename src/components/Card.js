@@ -86,31 +86,35 @@ const VoteWrapper = styled.div`
   }
 `;
 
-const TimeWrapper = styled.div``;
+const TimeWrapper = styled.div`
+  margin: 6px 0px 0px 0px;
+`;
 
 const VoteButtonWrapper = styled.div`
-  height: 38px;
+  height: 72px;
   display: flex;
   align-items: center;
 `;
 
 const VoteButton = styled.button`
   width: ${(props) => props.width};
-  height: 30px;
+  height: ${(props) => props.height};
   margin: ${(props) => props.margin};
   background: ${(props) => props.bgColorCode};
   border: ${(props) => props.border};
   cursor: pointer;
 
   img {
-    width: 16px;
-    height: 16px;
+    width: ${(props) => props.ImgWidth};
+    height: ${(props) => props.ImgHeight};
   }
 
   @media (max-width: 600px) {
     width: 30px;
+    height: 30px;
     img {
-      width: 30px;
+      width: 31px;
+      height: 16px;
       margin: auto;
     }
     margin: ${(props) => props.marginOnMedia};
@@ -243,7 +247,10 @@ const Card = ({
       >
         <DescriptionWrapper gridColumn={isColumn ? '10% auto' : '199px auto'}>
           <VoteButton
+            height='30px'
             width='30px'
+            ImgWidth='16px'
+            ImgHeight='16px'
             margin={isColumn ? '5px 14px 0px 0px' : ''}
             border='none'
             bgColorCode={
@@ -273,7 +280,10 @@ const Card = ({
             {alreadyVoted === false && (
               <>
                 <VoteButton
-                  width='30px'
+                  ImgWidth={isColumn ? '16px' : '33px'}
+                  ImgHeight={isColumn ? '16px' : '46px'}
+                  height={isColumn ? '30px' : '56px'}
+                  width={isColumn ? '30px' : '69px'}
                   onClick={() =>
                     btnSelected !== 'upVote'
                       ? setBtnSelected('upVote')
@@ -286,7 +296,10 @@ const Card = ({
                   <img alt='thumbsUp' src={ThumbsUp} />
                 </VoteButton>
                 <VoteButton
-                  width='30px'
+                  ImgWidth={isColumn ? '16px' : '33px'}
+                  ImgHeight={isColumn ? '16px' : '46px'}
+                  height={isColumn ? '30px' : '56px'}
+                  width={isColumn ? '30px' : '69px'}
                   onClick={() =>
                     btnSelected !== 'downVote'
                       ? setBtnSelected('downVote')
