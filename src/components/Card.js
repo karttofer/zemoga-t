@@ -9,6 +9,9 @@ import * as constStyles from '../commons/constants/contants';
 // Actions
 import * as actions from '../store/actions';
 
+// Helper Functions
+import { calcDate } from '../helpers/HelperFunctions';
+
 // Assets
 import ThumbsUp from '../assets/images/thumbs-up.svg';
 import ThumbsDown from '../assets/images/thumbs-down.svg';
@@ -173,28 +176,6 @@ const Card = ({
 
   // Store dispatch
   const dispatch = useDispatch();
-
-  /**
-   * @param {date} date1 - This wil be the current date
-   * @param {date} date2 - The date that we'll use to make the difference
-   * @returns A message with the time that have been pased example: 14 hours ago.
-   */
-  const calcDate = (date1, date2) => {
-    const diff = Math.floor(date1.getTime() - date2.getTime());
-    const day = 1000 * 60 * 60 * 24;
-
-    const days = Math.floor(diff / day);
-    const months = Math.floor(days / 31);
-    const years = Math.floor(months / 12);
-
-    let message;
-
-    if (days) message = `${days} days ago`;
-    if (months) message = `${months} months ago`;
-    if (years) message = `${years} years ago`;
-
-    return message;
-  };
 
   /**
    * @description This function will make a dispatch to make a vote
